@@ -18,8 +18,9 @@ async function getDoc() {
         scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
-    _doc = new GoogleSpreadsheet(process.env.SHEET_ID, serviceAccountAuth);
-    await _doc.loadInfo(); // loads document properties and worksheets
+    const doc = new GoogleSpreadsheet(process.env.SHEET_ID, serviceAccountAuth);
+    await doc.loadInfo(); // loads document properties and worksheets
+    _doc = doc;
     console.log('info loaded')
     return _doc;
 }
