@@ -3,18 +3,27 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faSoundcloud, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const navItems = {
   '/': {
     name: 'home',
   },
+  '/about': {
+    name: 'about',
+  },
   '/works': {
     name: 'works',
   },
-  '/about': {
-    name: 'about',
-  }
+  '/contact': {
+    name: 'contact',
+  },
+  'https://soundcloud.com/omri-kochavi-984880996': {
+    icon: faSoundcloud,
+  },
+  'https://www.youtube.com/user/nomrik': {
+    icon: faYoutube,
+  },
 };
 
 export function Navbar() {
@@ -42,12 +51,10 @@ export function Navbar() {
         </div>
       )}
 
-      <div className="lg:sticky lg:top-20 flex flex-row align-items-center">
-      <h1 className={`font-bold flex align-middle relative py-1 px-2 ${isOpen ? 'hidden' : 'block'}`}>Omri Kochavi</h1>
+      <div className="lg:sticky lg:top-20 flex flex-row items-center">
+        <h1 className={`font-bold flex align-middle relative py-1 px-2 ${isOpen ? 'hidden' : 'block'}`}>OMRI KOCHAVI</h1>
 
         <nav className={`flex ml-auto flex-${isOpen ? 'col' : 'row'} items-${isOpen ? 'start' : 'center'} justify-${isOpen ? 'start' : 'center'} ${isOpen ? 'md:w-full md:items-start' : ''}`}>
-          {/* Logo */}
-
           {/* Hamburger Menu */}
           {!isOpen && (
             <div className="md:hidden">
@@ -60,14 +67,15 @@ export function Navbar() {
           )}
 
           {/* Navigation Links */}
-          <div className={`md:flex md:flex-row ${isOpen ? 'block' : 'hidden'}`}>
-            {Object.entries(navItems).map(([path, { name }]) => (
+          <div className={`md:flex flex-col md:flex-row ${isOpen ? 'flex' : 'hidden'} items-center`}>
+            {Object.entries(navItems).map(([path, { name, icon }]) => (
               <Link
                 key={path}
                 href={path}
                 onClick={closeMenu}
                 className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex relative py-1 px-2"
               >
+                {icon && <FontAwesomeIcon icon={icon} className="md:mr-2" />}
                 {name}
               </Link>
             ))}
