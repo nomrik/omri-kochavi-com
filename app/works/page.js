@@ -17,7 +17,7 @@ export default async function Works() {
 
     return (
         <div className="flex">
-            <div className="w-1/6 p-5 md:p-10 relative">
+            <div className="w-1/6 p-5 hidden md:block md:p-10 relative">
                 <ul className="sticky top-6">
                     {Object.keys(worksByCategory).sort((entryA, entryB) => categoryOrder[entryA] - categoryOrder[entryB]).map((category) => (
                         <li key={category} className="mb-6">

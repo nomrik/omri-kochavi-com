@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
         <div className="bg-amber-500">
           {children}
         </div>
+        <div className="text-center text-xs mt-4">© Omri Kochavi 2024</div>
       </body>
     </html>
   );
