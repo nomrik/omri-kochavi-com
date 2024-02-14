@@ -1,13 +1,15 @@
 import { fetchAboutPage } from '@/app/lib/data';
 import Image from 'next/image';
 
+export const revalidate = 60;
+
 export default async function About() {
     const aboutParagraphs = await fetchAboutPage();
     return (
         <div className="flex flex-row">
-            <div className='flex-grow w-1/2 p-5 md:p-10 text-sm'>
+            <div className='flex-grow w-1/2 p-6 pb-0 text-sm'>
                 {aboutParagraphs.map(paragraph => (
-                    <p className='mb-8' key={paragraph.get('paragraph')}>{paragraph.get('content')}</p>
+                    <p className='mb-8' key={paragraph.get('paragraph')} dangerouslySetInnerHTML={{__html: paragraph.get('content')}}></p>
                 ))}
             </div>
             <div class="ml-auto">
