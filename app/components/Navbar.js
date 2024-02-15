@@ -4,7 +4,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faSoundcloud, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faSoundcloud, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 
 const navItems = {
   '/': {
@@ -28,7 +30,7 @@ const navItems = {
 };
 
 export function Navbar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -42,7 +44,7 @@ export function Navbar() {
   return (
     <aside className={`${isOpen ? 'fixed inset-0 flex justify-center items-center bg-white dark:bg-black z-50' : '-ml-[8px] tracking-tight sticky top-0 z-10 h-16 text-center bg-amber-400'} pb-6 pt-4 `}>
       {isOpen && (
-        <div className="absolute top-0 left-0 w-full flex justify-between items-center px-4 py-2">
+        <div className="absolute top-2 left-0 w-full flex justify-between items-center px-4 py-2">
           {/* Close Icon */}
           <button onClick={toggleMenu} className="focus:outline-none">
             <FontAwesomeIcon icon={faTimes} className="text-gray-800 dark:text-gray-200 w-6 h-6" />
