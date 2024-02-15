@@ -15,7 +15,7 @@ export default function Home() {
                   alt="Omri Kochavi Profile Picture"
               />
               <p className="text-sm mb-2"><i>BBC Singers dir. Owain Park</i></p>
-              <iframe className="w-full md:min-w-96 md:w-3/4 aspect-video" src="https://www.youtube.com/embed/uqwlIsPtlgg?si=NRl_iXO3Jl_E5bef&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe className="w-full md:max-w-[600px] md:min-w-96 md:w-3/4 aspect-video" src="https://www.youtube.com/embed/uqwlIsPtlgg?si=NRl_iXO3Jl_E5bef&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               <p className="text-base mt-2"><b>Kishtatos</b> (2022)</p>
             </div>
             <div class="ml-auto">

@@ -18,7 +18,7 @@ export default async function Works() {
     return (
         <div className="flex">
             <div className="w-1/6 p-5 hidden md:block md:p-10 relative">
-                <ul className="sticky top-6">
+                <ul className="sticky top-20">
                     {Object.keys(worksByCategory).sort((entryA, entryB) => categoryOrder[entryA] - categoryOrder[entryB]).map((category) => (
                         <li key={category} className="mb-6">
                             <Link href={`#${category}`} className="underline font-light">{category.toUpperCase()}</Link>

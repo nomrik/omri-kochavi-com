@@ -12,13 +12,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} py-4 px-6 md:py-8 md:px-12`}>
+      <body className={`${inter.className} flex flex-col min-h-screen px-6 pb-4 md:px-12`}>
         <Navbar />
-        <div className="bg-amber-500">
-          {children}
+        <div className="flex-1">
+          <div className="bg-amber-500">
+            {children}
+          </div>
         </div>
-        <div className="text-center text-xs mt-4">© Omri Kochavi 2024</div>
-      </body>
+          <div className="w-full mt-6 text-center text-xs">
+            © Omri Kochavi 2024
+          </div>
+        </body>
     </html>
   );
 }

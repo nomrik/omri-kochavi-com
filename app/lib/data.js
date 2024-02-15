@@ -15,7 +15,7 @@ async function getDoc() {
         // see "Authentication" section in docs for more info
         email: process.env.CLIENT_EMAIL,
         key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
-        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+        scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
     });
 
     const doc = new GoogleSpreadsheet(process.env.SHEET_ID, serviceAccountAuth);

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faSoundcloud, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
@@ -27,6 +28,7 @@ const navItems = {
 };
 
 export function Navbar() {
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -38,7 +40,7 @@ export function Navbar() {
   };
 
   return (
-    <aside className={`${isOpen ? 'fixed inset-0 flex justify-center items-center bg-white dark:bg-black z-50' : '-ml-[8px] mb-16 tracking-tight'}`}>
+    <aside className={`${isOpen ? 'fixed inset-0 flex justify-center items-center bg-white dark:bg-black z-50' : '-ml-[8px] tracking-tight sticky top-0 z-10 h-16 text-center bg-amber-400'} pb-6 pt-4 `}>
       {isOpen && (
         <div className="absolute top-0 left-0 w-full flex justify-between items-center px-4 py-2">
           {/* Close Icon */}
@@ -68,17 +70,20 @@ export function Navbar() {
 
           {/* Navigation Links */}
           <div className={`md:flex flex-col md:flex-row ${isOpen ? 'flex' : 'hidden'} items-center`}>
-            {Object.entries(navItems).map(([path, { name, icon }]) => (
-              <Link
-                key={path}
-                href={path}
-                onClick={closeMenu}
-                className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex relative py-1 px-2"
-              >
-                {icon && <FontAwesomeIcon icon={icon} className="md:mr-2" />}
-                {name}
-              </Link>
-            ))}
+            {Object.entries(navItems).map(([path, { name, icon }]) => {
+              const isSelected = path === pathname;
+              return (
+                <Link
+                  key={path}
+                  href={path}
+                  onClick={closeMenu}
+                  className={`transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex relative py-1 px-2 ${isSelected ? 'font-medium' : ''}`}
+                >
+                  {icon && <FontAwesomeIcon icon={icon} className="md:mr-2" />}
+                  {name}
+                </Link>
+              );
+            })}
           </div>
         </nav>
       </div>
