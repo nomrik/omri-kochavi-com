@@ -29,18 +29,23 @@ export default async function Works() {
             <div className="p-5 md:p-10 text-sm">
                 {Object.entries(worksByCategory).sort((entryA, entryB) => categoryOrder[entryA[0]] - categoryOrder[entryB[0]]).map(([category, works]) => {
                     return (
-                        <div key={category} id={category} className='mb-4'>
+                        <div key={category} id={category} className='mb-4 scroll-my-24'>
                             <h2 className="text-xl font-bold mb-6">{category.toUpperCase()}</h2>
                             {works.map(work => {
                                 return (
                                     <div className="mb-8 text-l" key={work.get('title')}>
-                                        <div className="mb-4">
-                                            <p className="mb-2"><span className="font-medium">{work.get('title')}</span> ({work.get('year')})</p>
-                                            <p className="mb-2">for {work.get('instrumentation')}</p>
-                                            <p className="mb-4">{work.get('duration')}`</p>
+                                        <div className="mb-4 text-base">
+                                            <p className="mb-2 font-medium">{work.get('title')}</p>
+                                            <div className="text-sm">
+                                                <span>{work.get('instrumentation')}</span>
+                                                <span> / </span>
+                                                <span>{work.get('duration')}`</span>
+                                                <span>/ </span>
+                                                <span>{work.get('year')}</span>
+                                            </div>
                                         </div>
-                                        <div className="mb-4">
-                                            <p className="mb-2">commissioned by {work.get('commission')}</p>
+                                        <div className="mb-4 font-light">
+                                            {work.get('commission') && <p className="mb-2">commissioned by {work.get('commission')}</p>}
                                             <p className="mb-2">f.p. {work.get('premiere')}</p>
                                         </div>
                                         <div className="mb-4 font-light">
