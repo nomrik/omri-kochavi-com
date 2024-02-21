@@ -18,7 +18,7 @@ export default function Home() {
               <iframe className="w-full md:max-w-[600px] md:min-w-96 md:w-3/4 aspect-video" src="https://www.youtube.com/embed/uqwlIsPtlgg?si=NRl_iXO3Jl_E5bef&amp;controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
               <p className="text-base mt-2"><b>Kishtatos</b> (2022)</p>
             </div>
-            <div class="ml-auto">
+            <div className="ml-auto">
               <Image
                   src="/profile.jpeg"
                   width={490}

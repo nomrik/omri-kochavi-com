@@ -1,13 +1,16 @@
 import { fetchWorks } from '@/app/lib/data';
-import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle, faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { faPlayCircle, faFilePdf, faClapperboard } from '@fortawesome/free-solid-svg-icons';
 
 const categoryOrder = {
     'upcoming': 0,
     'orchestra': 1,
-    'choral': 2
+    'choral / vocal ensemble': 2,
+    'chamber': 3,
+    'dancer': 4,
+    'voice + instruments': 5,
+    'solo': 6
 }
 
 export const revalidate = 60;
@@ -27,9 +30,12 @@ export default async function Works() {
                 </ul>
             </div>
             <div className="p-5 md:p-10 text-sm">
+            <p className="mb-8"> Please <Link href={`/contact`} className="underline font-light">contact me</Link> for any scores / recordings that are not on here.</p>
                 {Object.entries(worksByCategory).sort((entryA, entryB) => categoryOrder[entryA[0]] - categoryOrder[entryB[0]]).map(([category, works]) => {
                     return (
                         <div key={category} id={category} className='mb-4 scroll-my-24'>
+                            {category === 'upcoming' && <hr className="border-black mb-8 border-[1px] rounded"/>}
+
                             <h2 className="text-xl font-bold mb-6">{category.toUpperCase()}</h2>
                             {works.map(work => {
                                 return (
@@ -45,8 +51,12 @@ export default async function Works() {
                                             </div>
                                         </div>
                                         <div className="mb-4 font-light">
+                                            {work.get('text') && <p className="mb-2">text by {work.get('text')}</p>}
+                                            {work.get('collaborators') && <p className="mb-2">in collaboration with {work.get('collaborators')}</p>}
                                             {work.get('commission') && <p className="mb-2">commissioned by {work.get('commission')}</p>}
-                                            <p className="mb-2">f.p. {work.get('premiere')}</p>
+                                            {work.get('premiere') && <p className="mb-2">f.p. {work.get('premiere')}</p>}
+                                            {work.get('written_for') && <p className="mb-2">written for {work.get('written_for')}</p>}
+                                            {work.get('misc') && <p className="mb-2">{work.get('misc')}</p>}
                                         </div>
                                         <div className="mb-4 font-light">
                                             {work.get('video') &&
@@ -55,12 +65,20 @@ export default async function Works() {
                                                     href={work.get('video')}
                                                     className="underline decoration-solid mr-4"
                                                 >
-                                                    <FontAwesomeIcon icon={faPlayCircle} className="mr-1" />WATCH
+                                                    <FontAwesomeIcon icon={faClapperboard} className="mr-1" />WATCH
+                                                </Link>}
+                                            {work.get('audio') &&
+                                                <Link
+                                                    key={work.get('audio')}
+                                                    href={work.get('audio')}
+                                                    className="underline decoration-solid mr-4"
+                                                >
+                                                    <FontAwesomeIcon icon={faPlayCircle} className="mr-1" />LISTEN
                                                 </Link>}
                                             {work.get('score') &&
                                                 <Link
                                                     key={work.get('score')}
-                                                    href={`/${work.get('score')}.pdf`}
+                                                    href={`/scores/${work.get('score')}.pdf`}
                                                     className="underline decoration-solid"
                                                 >
                                                     <FontAwesomeIcon icon={faFilePdf} className="mr-1" />SCORE
@@ -69,6 +87,7 @@ export default async function Works() {
                                     </div>
                                 )
                             })}
+                            {category === 'upcoming' && <hr className="border-black mb-8 border-[1px] rounded"/>}
                         </div>
                     )
                 })}

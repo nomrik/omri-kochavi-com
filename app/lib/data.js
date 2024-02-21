@@ -38,7 +38,7 @@ export async function fetchWorks() {
 
     const worksByCategory = {};
 
-    works.sort((workA, workB) => moment(workA.get('year')).isAfter(workB.get('yearr')) ? -1 : 1);
+    works.sort((workA, workB) => moment(workA.get('year')).isAfter(workB.get('year')) ? -1 : 1);
 
     works.forEach(work => {
         const premiereDate = work.get('premiere_date') && moment(work.get('premiere_date'));
