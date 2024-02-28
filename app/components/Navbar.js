@@ -42,12 +42,12 @@ export function Navbar() {
   };
 
   return (
-    <aside className={`${isOpen ? 'fixed inset-0 flex justify-center items-center bg-white dark:bg-black z-50' : '-ml-[8px] tracking-tight sticky top-0 z-10 h-16 text-center bg-amber-400'} pb-6 pt-4 `}>
+    <aside className={`${isOpen ? 'fixed inset-0 flex justify-center items-center bg-white  z-50' : '-ml-[8px] tracking-tight sticky top-0 z-10 h-16 text-center bg-amber-400'} pb-6 pt-4 `}>
       {isOpen && (
         <div className="absolute top-2 left-0 w-full flex justify-between items-center px-4 py-2">
           {/* Close Icon */}
           <button onClick={toggleMenu} className="focus:outline-none">
-            <FontAwesomeIcon icon={faTimes} className="text-gray-800 dark:text-gray-200 w-6 h-6" />
+            <FontAwesomeIcon icon={faTimes} className="text-gray-800 w-6 h-6" />
           </button>
 
           {/* Placeholder for layout */}
@@ -62,7 +62,7 @@ export function Navbar() {
           {/* Hamburger Menu */}
           {!isOpen && (
             <div className="md:hidden">
-              <button onClick={toggleMenu} className="block text-gray-800 dark:text-gray-200 focus:outline-none">
+              <button onClick={toggleMenu} className="block text-gray-800 focus:outline-none">
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
@@ -79,7 +79,7 @@ export function Navbar() {
                   key={path}
                   href={path}
                   onClick={closeMenu}
-                  className={`transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex relative py-1 px-2 ${isSelected ? 'font-medium' : ''}`}
+                  className={`transition-all hover:text-neutral-800 flex relative py-1 px-2 ${isSelected ? 'font-medium' : ''}`}
                 >
                   {icon && <FontAwesomeIcon icon={icon} className="md:mr-2" />}
                   {name}

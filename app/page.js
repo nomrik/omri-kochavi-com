@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Home() {
     return (
         <div className="flex flex-row">
-            <div class="flex-grow p-10 flex flex-col justify-center items-center">
+            <div className="flex-grow p-10 flex flex-col justify-center items-center">
               <p className="text-4xl mb-4">OMRI KOCHAVI</p>
               <p className="text-xl mb-4">composer, guitarist</p>
               <p className="text-xl mb-8">London | Tel Aviv</p>
