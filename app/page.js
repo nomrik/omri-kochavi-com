@@ -5,8 +5,8 @@ export default function Home() {
         <div className="flex flex-row">
             <div className="flex-grow p-10 flex flex-col justify-center items-center">
               <p className="text-4xl mb-4">OMRI KOCHAVI</p>
-              <p className="text-xl mb-4">composer, guitarist</p>
-              <p className="text-xl mb-8">London | Tel Aviv</p>
+              <p className="text-xl mb-8">composer | guitarist</p>
+              {/* <p className="text-xl mb-8">London | Tel Aviv</p> */}
               <Image
                   src="/profile.jpeg"
                   width={245}
