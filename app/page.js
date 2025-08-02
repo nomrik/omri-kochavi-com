@@ -11,7 +11,7 @@ export default function Home() {
             src="/profile.jpeg"
             width={245}
             height={587.5}
-            className="block md:hidden mb-6 mx-auto"
+            className="block md:hidden mx-auto pt-8"
             alt="Omri Kochavi Profile Picture"
           />
           <div className="flex flex-col items-center sticky top-0 z-10 bg-amber-500 pt-8 border-b border-black">
