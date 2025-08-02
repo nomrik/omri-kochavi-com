@@ -18,6 +18,9 @@ const navItems = {
   '/works': {
     name: 'works',
   },
+  '/events': {
+    name: 'events',
+  },
   '/contact': {
     name: 'contact',
   },

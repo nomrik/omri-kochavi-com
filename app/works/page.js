@@ -65,7 +65,7 @@ export default async function Works() {
                 </h2>
                 {works.map((work) => {
                   return (
-                    <div className="mb-8 text-l" key={work.get("title")}>
+                    <div className="mb-8 text-l scroll-my-24" key={work.get("title")} id={work.get("title").toLowerCase().replace(/\s+/g, '-')}>
                       <div className="mb-4 text-base">
                         <p className="mb-2 font-medium">{work.get("title")}</p>
                         <div className="text-sm">
