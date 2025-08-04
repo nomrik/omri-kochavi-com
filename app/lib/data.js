@@ -58,3 +58,21 @@ export async function fetchWorks() {
 
     return worksByCategory;
 }
+
+export async function fetchEvents() {
+    const doc = await getDoc();
+    const sheet = doc.sheetsByTitle['Events'];
+    if (!sheet) {
+        return [];
+    }
+    const events = await sheet.getRows();
+
+    events.sort((eventA, eventB) => moment(eventA.get('date')).isBefore(moment(eventB.get('date'))) ? 1 : -1);
+
+    return events;
+}
+
+export function generateWorkLink(workTitle) {
+    if (!workTitle) return null;
+    return `/works#${workTitle.toLowerCase().replace(/\s+/g, '-')}`;
+}

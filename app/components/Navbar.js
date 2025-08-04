@@ -18,6 +18,9 @@ const navItems = {
   '/works': {
     name: 'works',
   },
+  '/events': {
+    name: 'events',
+  },
   '/contact': {
     name: 'contact',
   },
@@ -56,7 +59,9 @@ export function Navbar() {
       )}
 
       <div className="lg:sticky lg:top-20 flex flex-row items-center">
-        <h1 className={`font-bold flex align-middle relative py-1 px-2 ${isOpen ? 'hidden' : 'block'}`}>OMRI KOCHAVI</h1>
+        <Link href="/">
+          <h1 className={`font-bold flex align-middle relative py-1 px-2 ${isOpen ? 'hidden' : 'block'}`}>OMRI KOCHAVI</h1>
+        </Link>
 
         <nav className={`flex ml-auto flex-${isOpen ? 'col' : 'row'} items-${isOpen ? 'start' : 'center'} justify-${isOpen ? 'start' : 'center'} ${isOpen ? 'md:w-full md:items-start' : ''}`}>
           {/* Hamburger Menu */}
