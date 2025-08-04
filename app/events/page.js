@@ -89,7 +89,7 @@ export default async function Events() {
           ))}
         </ul>
       </div>
-      <div className="p-5 md:p-10 text-sm">        
+      <div className="p-5 md:p-10 text-sm flex-1">        
         {/* Upcoming Events Section */}
         <div id="upcoming" className="mb-12 scroll-my-24">
           <h2 className="text-xl font-bold mb-6">UPCOMING</h2>
@@ -99,6 +99,7 @@ export default async function Events() {
             emptyMessage="No upcoming events at the moment."
           />
         </div>
+        <hr className="border-black mb-8 border-[1px] rounded" />
 
         {/* Past Events by Year */}
         {sortedYears.map((year) => (

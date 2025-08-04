@@ -23,7 +23,7 @@ export default function Home() {
           
           {/* Ladies in Bloomers Section */}
           <div className="mb-8 pt-8">
-            <h2 className="text-xl font-bold mb-4">LADIES IN BLOOMERS</h2>
+            <h2 className="text-xl font-bold mb-4">LADIES IN BLOOMERS - PREMIERE</h2>
             <p className="text-sm mb-3 font-semibold text-left">
               London Sinfonietta and EXAUDI Vocal Ensemble give the premiere of &ldquo;Ladies in Bloomers&rdquo; at Story Garden (British Library, London) on Sunday, September 14th 2025.
             </p>
@@ -45,8 +45,9 @@ export default function Home() {
           
           {/* Videos */}
           <div className="space-y-6">
-            {/* First Video */}
-            <div>
+            {/* KISHTATOS - RECORDING */}
+            <div className="mb-8">
+              <h2 className="text-xl font-bold mb-4">KISHTATOS - RECORDING</h2>
               <p className="text-sm mb-1 italic">
                 BBC Singers dir. Owain Park
               </p>
@@ -66,8 +67,9 @@ export default function Home() {
             {/* Divider */}
             <div className="border-t border-black"></div>
             
-            {/* Second Video */}
-            <div>
+            {/* ANAFIM - RECORDING */}
+            <div className="mb-8">
+              <h2 className="text-xl font-bold mb-4">ANAFIM - RECORDING</h2>
               <p className="text-sm mb-1 italic">
                 Aestus Quartet
               </p>
