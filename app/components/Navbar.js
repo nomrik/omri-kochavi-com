@@ -21,6 +21,9 @@ const navItems = {
   '/events': {
     name: 'events',
   },
+  '/mailing-list': {
+    name: 'mailing list',
+  },
   '/contact': {
     name: 'contact',
   },
