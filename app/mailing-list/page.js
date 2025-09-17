@@ -85,7 +85,7 @@ export default function MailingList() {
         </button>
       </form>
 
-      {true && (
+      {status === 'success' && (
         <div className="mt-4 text-green-700">
           <p>Thank you for subscribing!</p>
           <br />
