@@ -85,9 +85,11 @@ export default function MailingList() {
         </button>
       </form>
 
-      {status === 'success' && (
+      {true && (
         <div className="mt-4 text-green-700">
           <p>Thank you for subscribing!</p>
+          <br />
+          <p>Please check your email for a welcome email which <i>might</i> end up in your promtions/spam folder, and move it to your primary inbox - so our efforts are not all in vein!</p>
         </div>
       )}
 
