@@ -5,4 +5,7 @@ webp filter=lfs diff=lfs merge=lfs -text
 avif filter=lfs diff=lfs merge=lfs -text
 gif filter=lfs diff=lfs merge=lfs -text
 pdf} filter=lfs diff=lfs merge=lfs -text
+public/.{jpg,jpeg,png,webp,avif,gif} filter=lfs diff=lfs merge=lfs -text
+public/*.{jpg,jpeg,png,webp,avif,gif,pdf} filter=lfs diff=lfs merge=lfs -text
+public/**/*.{jpg,jpeg,png,webp,avif,gif,pdf} filter=lfs diff=lfs merge=lfs -text
 public/*.jpg filter=lfs diff=lfs merge=lfs -text
