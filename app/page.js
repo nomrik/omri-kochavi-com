@@ -54,28 +54,32 @@ export default async function Home() {
           {/* GILUFIM - WORLD PREMIERE */}
           <div className="mb-8 pt-8">
             <h2 className="text-xl font-bold mb-4">GILUFIM - WORLD PREMIERE</h2>
-            <p className="text-sm mb-3 font-semibold text-left">London Symphony Orchestra gives the premiere of &ldquo;gilufim&rdquo; on Thursday, 20 November 2025 at the Barbican.</p>
-            <p className="text-sm mb-4 text-left">
-              After working with the LSO for the past two years, &ldquo;gilufim&rdquo; will be premiered by the LSO conducted by Maxime Pascal, in a concert featuring two other premieres from Sasha Scott and Donghoon Shin, alongside Boulez&rsquo;s &ldquo;Rituel in memoriam Bruno Maderna&rdquo;.
-            </p>
-            <div className="mb-4">
-              <Image
-                src="/LSO_1.png"
-                width={1200}
-                height={800}
-                className="w-full h-auto object-cover rounded-lg"
-                alt="LSO Futures concert announcement"
-              />
-            </div>
-            <div className="mt-4 text-center">
-              <a 
-                href="https://www.lso.co.uk/whats-on/lso-futures-20-nov-25/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-sm underline hover:no-underline text-black"
-              >
-                <strong>Tickets!</strong>
-              </a>
+            <div className="flex flex-col md:flex-row gap-4 items-start">
+              <div className="flex-1">
+                <p className="text-sm mb-3 font-semibold text-left">London Symphony Orchestra gives the premiere of &ldquo;gilufim&rdquo; on Thursday, 20 November 2025 at the Barbican.</p>
+                <p className="text-sm mb-4 text-left">
+                  After working with the LSO for the past two years, &ldquo;gilufim&rdquo; will be premiered by the LSO conducted by Maxime Pascal, in a concert featuring two other premieres from Sasha Scott and Donghoon Shin, alongside Boulez&rsquo;s &ldquo;Rituel in memoriam Bruno Maderna&rdquo;.
+                </p>
+                <div className="text-center">
+                  <a 
+                    href="https://www.lso.co.uk/whats-on/lso-futures-20-nov-25/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sm underline hover:no-underline text-black"
+                  >
+                    <strong>Tickets!</strong>
+                  </a>
+                </div>
+              </div>
+              <div className="w-full md:w-1/2 flex-shrink-0">
+                <Image
+                  src="/LSO_1.png"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-cover rounded-lg"
+                  alt="LSO Futures concert announcement"
+                />
+              </div>
             </div>
           </div>
 

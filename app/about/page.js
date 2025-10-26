@@ -12,13 +12,11 @@ export default async function About() {
                 {aboutParagraphs.map(paragraph => (
                     <p className='mb-7' key={paragraph.get('paragraph')} dangerouslySetInnerHTML={{__html: paragraph.get('content')}}></p>
                 ))}
-                <div className="flex align-center justify-center mb-4 md:mb-0">
-                    <Link href="/bios/Omri Kochavi - bio (January 24).pdf" className="underline font-light">Bio</Link>
-                    <span className="mx-2">-</span>
-                    <Link href="/bios/Omri kochavi - CV (January 24).pdf" className="underline font-light">CV</Link>
+                <div className="flex align-center justify-center mb-4 md:mb-4">
+                    <Link href="/bios/Omri Kochavi - bio (October 25).pdf" className="underline font-light">PDF version</Link>
                 </div>
             </div>
-            <div className="ml-auto">
+            <div className="ml-auto flex items-center md:mr-6">
                 <Image
                     src="/playground.jpeg"
                     width={490}
