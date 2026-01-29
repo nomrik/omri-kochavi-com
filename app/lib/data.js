@@ -72,6 +72,16 @@ export async function fetchEvents() {
     return events;
 }
 
+export async function fetchPress() {
+    const doc = await getDoc();
+    const sheet = doc.sheetsByTitle['Press'];
+    if (!sheet) {
+        return [];
+    }
+    const pressItems = await sheet.getRows();
+    return pressItems;
+}
+
 export function generateWorkLink(workTitle) {
     if (!workTitle) return null;
     return `/works#${workTitle.toLowerCase().replace(/\s+/g, '-')}`;
