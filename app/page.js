@@ -48,8 +48,37 @@ export default async function Home() {
             <h1 className="text-3xl mb-3">OMRI KOCHAVI</h1>
             <p className="text-lg mb-6">composer | guitarist</p>
           </div>
-            {/* Divider */}
-            {/* <div className="border-t border-black mb-8"></div> */}
+          
+          {/* AYALOT - CHOIR & ORGAN FEATURE */}
+          <div className="mb-8 pt-8">
+            <h2 className="text-xl font-bold mb-4">AYALOT - CHOIR &amp; ORGAN FEATURE</h2>
+            <p className="text-sm mb-3 text-left">
+              &ldquo;ayalot&rdquo; was commissioned by Choir &amp; Organ for their 2026 New Music Series.
+            </p>
+            <p className="text-sm mb-4 text-left">
+              Read the article{" "}
+              <a
+                href="https://www.choirandorgan.com/content/new-music-series/omri-kochavi-ayalot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline text-black"
+              >
+                here
+              </a>{" "}
+              and watch the recording below, performed by the Temple Singers, directed by Thomas Allery.
+            </p>
+            <iframe
+              className="w-full aspect-video"
+              src="https://www.youtube.com/embed/vKJlB7pSyzs?controls=0"
+              title="Ayalot - YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+          
+          {/* Divider */}
+          <div className="border-t border-black mb-8"></div>
           
           {/* GILUFIM - WORLD PREMIERE */}
           <div className="mb-8 pt-8">
